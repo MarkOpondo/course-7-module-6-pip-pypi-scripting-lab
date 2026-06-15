@@ -7,7 +7,7 @@ def generate_log(data):
         # STEP 1: Validate input
         # Hint: Check if data is a list
         if not isinstance(data, list):
-            print("Error: Input data must be a list.")
+            raise ValueError("Input data must be a list.")
             return
         
         # STEP 2: Generate a filename with today's date (e.g., "log_20250408.txt")
