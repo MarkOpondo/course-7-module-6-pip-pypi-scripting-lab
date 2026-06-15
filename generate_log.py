@@ -2,7 +2,7 @@ from datetime import datetime
 import os
 
 # TODO: Implement log generation logic
-def generate_log(data, directory="logs"):
+def generate_log(data, directory=None):
     # STEP 1: Validate input
     # Hint: Check if data is a list
     if not isinstance(data, list):
@@ -10,14 +10,17 @@ def generate_log(data, directory="logs"):
         return
     
     # STEP 2: Generate a filename with today's date (e.g., "log_20250408.txt")
-    if directory and not os.path.exists(directory):
-        os.makedirs(directory)
-
     # Hint: Use datetime.now().strftime("%Y%m%d")
     today_str = datetime.now().strftime("%Y%m%d")
     filename = f"log_{today_str}.txt"
-    file_path = os.path.join(directory, filename)
 
+    if directory:
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+            file_path = os.path.join(directory, filename)
+        else:
+            file_path = filename
+            
     # STEP 3: Write the log entries to a file using File I/O
     # Use a with open() block and write each line from the data list
     # Example: file.write(f"{entry}\n")
@@ -29,7 +32,7 @@ def generate_log(data, directory="logs"):
     absolute_path = os.path.abspath(file_path)
     print(f"Success: Log written to {absolute_path}")
 
-    return filename
+    return file_path
 
 if __name__ == "__main__":
     sample_log = ["Test log is working"]
