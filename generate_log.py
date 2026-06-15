@@ -2,7 +2,7 @@ from datetime import datetime
 import os
 
 # TODO: Implement log generation logic
-def generate_log(data, directory=""):
+def generate_log(data, directory="logs"):
     # STEP 1: Validate input
     # Hint: Check if data is a list
     if not isinstance(data, list):
@@ -10,7 +10,7 @@ def generate_log(data, directory=""):
         return
     
     # STEP 2: Generate a filename with today's date (e.g., "log_20250408.txt")
-    if not os.path.exists(directory):
+    if directory and not os.path.exists(directory):
         os.makedirs(directory)
 
     # Hint: Use datetime.now().strftime("%Y%m%d")
