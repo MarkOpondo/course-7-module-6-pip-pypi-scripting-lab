@@ -31,5 +31,6 @@ def generate_log(data):
         print(f"Success: Log written to {absolute_path}")
 
 if __name__ == "__main__":
-    generate_log()
+    sample_log = ["Test log is working"]
+    generate_log(sample_log)
 
