@@ -2,7 +2,7 @@ from datetime import datetime
 import os
 
 # TODO: Implement log generation logic
-def generate_log(data, directory="logs"):
+def generate_log(data, directory=""):
     # STEP 1: Validate input
     # Hint: Check if data is a list
     if not isinstance(data, list):
