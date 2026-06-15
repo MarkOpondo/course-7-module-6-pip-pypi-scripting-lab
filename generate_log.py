@@ -29,7 +29,7 @@ def generate_log(data, directory="logs"):
     absolute_path = os.path.abspath(file_path)
     print(f"Success: Log written to {absolute_path}")
 
-    return file_path
+    return filename
 
 if __name__ == "__main__":
     sample_log = ["Test log is working"]
