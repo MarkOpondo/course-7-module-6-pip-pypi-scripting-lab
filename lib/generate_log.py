@@ -29,3 +29,7 @@ def generate_log(data):
         # STEP 4: Print a confirmation message with the filename
         absolute_path = os.path.abspath(file_path)
         print(f"Success: Log written to {absolute_path}")
+
+if __name__ == "__main__":
+    generate_log()
+
